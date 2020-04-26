@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:voitho.ViewModels"
+             x:Class="voitho.Views.ContentPages.SignupCompletedView">
+    <ContentPage.BindingContext>
+        <ViewModels:SignupCompletedViewModel></ViewModels:SignupCompletedViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="16">
+            <Label Style="{StaticResource TitleLabel}" Text="{Binding VisualState.TitleMessage}"/>
+            <Label Style="{StaticResource WelcomeMessageLabel}"
+                   Text="{Binding VisualState.DescriptionMessage}"
+                   VerticalOptions="FillAndExpand"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Style="{StaticResource FooterDoubleButtonStyle}" Text="BACK" Command="{Binding LogoutCommand}"/>
+                <Button Style="{StaticResource FooterDoubleButtonStyle}" Text="LOG IN" Command="{Binding OpenLoginViewCommand}"
+                        IsEnabled="{Binding VisualState.IsUserVerified}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

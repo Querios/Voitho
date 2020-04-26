@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:voitho.ViewModels"
+             x:Class="voitho.Views.ContentPages.UserTypeView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="INBOX"/>
+        <ToolbarItem Text="MY REQUESTS"/>
+        <ToolbarItem Text="MY TEAMS"/>
+        <ToolbarItem Text="SETTINGS"/>
+        <ToolbarItem Text="LOGOUT" Command="{Binding LogoutCommand}"/>
+
+        <ToolbarItem Text="|" IsEnabled="False"/>
+
+        <ToolbarItem Text="{Binding VisualState.ActiveUser.DisplayRanking}"/>
+        <ToolbarItem Icon="{StaticResource DefaultProfileImage}" IsEnabled="False"/>
+        <ToolbarItem Text="{Binding VisualState.ActiveUser.Username}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <ViewModels:UserTypeViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.RowSpan="4" Grid.Column="0" BackgroundColor="LightGreen">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenAskForHelpViewCommand}"/>
+                </Grid.GestureRecognizers>
+                <Label Grid.Row="1" Style="{StaticResource ChoiceLabel}" TextColor="MediumPurple" Text="ASK FOR HELP" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+            <Grid Grid.RowSpan="4" Grid.Column="1" BackgroundColor="MediumPurple">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenOfferHelpViewCommand}"/>
+                </Grid.GestureRecognizers>
+                <Label Grid.Row="1" Style="{StaticResource ChoiceLabel}" TextColor="LightGreen" Text="OFFER YOUR HELP" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+            <Image Grid.Row="0" Grid.ColumnSpan="2" Source="{StaticResource VoithoLogo}" Style="{StaticResource LogoImage}" InputTransparent="True"/>
+            <Image Grid.ColumnSpan="2" Grid.RowSpan="4" Source="{StaticResource ShakingHandsImage}" Style="{StaticResource StretchedImage}" InputTransparent="True"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

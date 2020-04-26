@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ContentViews="clr-namespace:voitho.Views.ContentViews"
+             xmlns:ViewModels="clr-namespace:voitho.ViewModels"
+             x:Class="voitho.Views.ContentPages.VolunteersView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="INBOX"/>
+        <ToolbarItem Text="MY REQUESTS"/>
+        <ToolbarItem Text="MY TEAMS"/>
+        <ToolbarItem Text="SETTINGS"/>
+        <ToolbarItem Text="LOGOUT" Command="{Binding LogoutCommand}"/>
+
+        <ToolbarItem Text="|" IsEnabled="False"/>
+
+        <ToolbarItem Text="{Binding VisualState.ActiveUser.DisplayRanking}"/>
+        <ToolbarItem Icon="{StaticResource DefaultProfileImage}" IsEnabled="False"/>
+        <ToolbarItem Text="{Binding VisualState.ActiveUser.Username}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <ViewModels:VolunteersViewModel></ViewModels:VolunteersViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Style="{StaticResource TitleLabel}" Text="ASK VOLUNTEERS TO HELP YOU!"/>
+            <ContentViews:PeopleListView></ContentViews:PeopleListView>
+            <Button Style="{StaticResource FooterSingleButtonStyle}" Command="{Binding ReturnToUserTypeViewCommand}" Text="DONE"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

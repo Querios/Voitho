@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="voitho.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="MenuButtonStyle">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Margin" Value="16" />
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource BrandColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Button" x:Key="FooterSingleButtonStyle">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource BrandColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Button" x:Key="FooterDoubleButtonStyle">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource BrandColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <Style TargetType="Label" x:Key="DescriptionLabelStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="16"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="LoginLabelStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="16"/>
+            </Style>
+            
+            <Style TargetType="Label" x:Key="WelcomeMessageLabel">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="16"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ChoiceLabel">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="26"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="16"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+            
+            <Style TargetType="Label" x:Key="TitleLabel">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="16"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="MessageLabel">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Margin" Value="16"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="MainViewLabel">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="Margin" Value="16"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ListViewTitleLabel">
+                <Setter Property="FontSize" Value="23"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ListViewProductsLabel">
+                <Setter Property="FontSize" Value="18"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ListViewDateLabel">
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ListViewAmountLabel">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="End"/>
+                <Setter Property="FontSize" Value="23"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ListLabelStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ListLabelFooterStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="ListLabelEmptyListStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="PopupLabelFooterStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Fill"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="Margin" Value="16,40"/>
+                <Setter Property="FontSize" Value="23"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="FilterLabelStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontSize" Value="Medium"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+            <Style TargetType="Label" x:Key="FilterDateLabelStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <!--<Setter Property="TextColor" Value="{StaticResource InverseTextColor}"/>-->
+            </Style>
+
+
+            <Style TargetType="Image" x:Key="LogoImage">
+                <Setter Property="HeightRequest" Value="180" />
+                <Setter Property="Margin" Value="12,0,0,0"></Setter>
+            </Style>
+
+            <Style TargetType="Image" x:Key="StretchedImage">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+
+            <Style TargetType="Image" x:Key="ArrowImageStyle">
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Image" x:Key="ProfileImageListStyle">
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="WidthRequest" Value="60"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <FileImageSource x:Key="VoithoLogo">
+                <FileImageSource.File>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="iOS">Icons/voitho_logo.png</On>
+
+                        <On Platform="Android">voitho_logo.png</On>
+
+                        <On Platform="UWP">Icons/voitho_logo.png</On>
+
+                    </OnPlatform>
+                </FileImageSource.File>
+            </FileImageSource>
+
+            <FileImageSource x:Key="ShakingHandsImage">
+                <FileImageSource.File>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="iOS">Icons/shaking_hands.png</On>
+
+                        <On Platform="Android">shaking_hands.png</On>
+
+                        <On Platform="UWP">Icons/shaking_hands.png</On>
+
+                    </OnPlatform>
+                </FileImageSource.File>
+            </FileImageSource>
+
+            <FileImageSource x:Key="DefaultProfileImage">
+                <FileImageSource.File>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="iOS">Icons/DefaultProfilePic.png</On>
+
+                        <On Platform="Android">DefaultProfilePic.png</On>
+
+                        <On Platform="UWP">Icons/DefaultProfilePic.png</On>
+
+                    </OnPlatform>
+                </FileImageSource.File>
+            </FileImageSource>
+
+            <FileImageSource x:Key="UpArrowIcon">
+                <FileImageSource.File>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="iOS">Icons/down_arrow.png</On>
+
+                        <On Platform="Android">up_arrow.png</On>
+
+                        <On Platform="UWP">Icons/down_arrow.png</On>
+
+                    </OnPlatform>
+                </FileImageSource.File>
+            </FileImageSource>
+
+            <FileImageSource x:Key="DownArrowIcon">
+                <FileImageSource.File>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="iOS">Icons/down_arrow.png</On>
+
+                        <On Platform="Android">down_arrow.png</On>
+
+                        <On Platform="UWP">Icons/down_arrow.png</On>
+
+                    </OnPlatform>
+                </FileImageSource.File>
+            </FileImageSource>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

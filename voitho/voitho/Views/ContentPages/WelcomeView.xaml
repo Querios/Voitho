@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:voitho.ViewModels"
+             x:Class="voitho.Views.ContentPages.WelcomeView">
+    <ContentPage.BindingContext>
+        <ViewModels:WelcomeViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="16">
+            <Label Style="{StaticResource TitleLabel}" Text="WELCOME"/>
+            <Label Style="{StaticResource WelcomeMessageLabel}" Text="PLEASE LOG IN TO CONTINUE" VerticalOptions="FillAndExpand"/>
+            <Button Style="{StaticResource MenuButtonStyle}" Text="LOG IN" Command="{Binding OpenLoginViewCommand}"/>
+            <Button Style="{StaticResource MenuButtonStyle}" Text="SIGN UP" Command="{Binding OpenSignupViewCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

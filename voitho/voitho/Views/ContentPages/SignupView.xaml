@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:voitho.ViewModels"
+             x:Class="voitho.Views.ContentPages.SignupView">
+    <ContentPage.BindingContext>
+        <ViewModels:SignupViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Style="{StaticResource TitleLabel}" Text="SIGN UP"/>
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="EMAIL:"/>
+                    <Entry Grid.Row="0" Grid.Column="1" Text="{Binding VisualState.SignupEmail, Mode=TwoWay}" Placeholder="Enter your email here..." Keyboard="Email"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="USERNAME:"/>
+                    <Entry Grid.Row="1" Grid.Column="1" Text="{Binding VisualState.SignupUsername, Mode=TwoWay}" Placeholder="Enter your username here..."/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="PASSWORD:"/>
+                    <Entry Grid.Row="2" Grid.Column="1" Text="{Binding VisualState.SignupPassword1, Mode=TwoWay}" Placeholder="Enter your password here..." IsPassword="True"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="REPEAT PASSWORD:"/>
+                    <Entry Grid.Row="3" Grid.Column="1" Text="{Binding VisualState.SignupPassword2, Mode=TwoWay}" Placeholder="Enter your password again here..." IsPassword="True"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="FIRST NAME:"/>
+                    <Entry Grid.Row="4" Grid.Column="1" Text="{Binding VisualState.SignupFirstName, Mode=TwoWay}" Placeholder="Enter your first name here..."/>
+
+                    <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="LAST NAME:"/>
+                    <Entry Grid.Row="5" Grid.Column="1" Text="{Binding VisualState.SignupLastName, Mode=TwoWay}" Placeholder="Enter your last name here..."/>
+
+                    <Label Grid.Row="6" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="DATE OF BIRTH:"/>
+
+                    <DatePicker Grid.Row="6" Grid.Column="1" MaximumDate="{Binding VisualState.MaxDate}"
+                                MinimumDate="{Binding VisualState.MinDate}"
+                                Date="{Binding VisualState.SignupBirthDate, Mode=TwoWay}"
+                                Format="dd-MMMM-yyyy"/>
+
+                    <Label Grid.Row="7" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="COUNTRY:"/>
+                    <Entry Grid.Row="7" Grid.Column="1" Text="{Binding VisualState.SignupCountry, Mode=TwoWay}" Placeholder="Enter your country here..."/>
+
+                    <Label Grid.Row="8" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="CITY:"/>
+                    <Entry Grid.Row="8" Grid.Column="1" Text="{Binding VisualState.SignupCity, Mode=TwoWay}" Placeholder="Enter your city here..."/>
+
+                    <Label Grid.Row="9" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="POSTAL CODE:"/>
+                    <Entry Grid.Row="9" Grid.Column="1" Text="{Binding VisualState.SignupPostalCode, Mode=TwoWay}" Placeholder="Enter your state here..." Keyboard="Numeric"/>
+
+                    <Label Grid.Row="10" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="ADDRESS:"/>
+                    <Entry Grid.Row="10" Grid.Column="1" Text="{Binding VisualState.SignupAddress, Mode=TwoWay}" Placeholder="Enter your address here..."/>
+
+                    <Label Grid.Row="11" Grid.Column="0" Style="{StaticResource LoginLabelStyle}" Text="MOBILE PHONE:"/>
+                    <Entry Grid.Row="11" Grid.Column="1" Text="{Binding VisualState.SignupMobilePhone, Mode=TwoWay}" Placeholder="Enter your mobile phone number here..." Keyboard="Telephone"/>
+                </Grid>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button Style="{StaticResource FooterDoubleButtonStyle}" Command="{Binding BackCommand}" Text="CANCEL" HorizontalOptions="FillAndExpand"/>
+                <Button Style="{StaticResource FooterDoubleButtonStyle}" Command="{Binding SignupCommand}" Text="SIGN UP" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

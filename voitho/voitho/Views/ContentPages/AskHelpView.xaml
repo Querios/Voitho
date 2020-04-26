@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:voitho.ViewModels"
+             BackgroundColor="LightGreen"
+             x:Class="voitho.Views.ContentPages.AskHelpView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="INBOX"/>
+        <ToolbarItem Text="MY REQUESTS"/>
+        <ToolbarItem Text="MY TEAMS"/>
+        <ToolbarItem Text="SETTINGS"/>
+        <ToolbarItem Text="LOGOUT" Command="{Binding LogoutCommand}"/>
+
+        <ToolbarItem Text="|" IsEnabled="False"/>
+
+        <ToolbarItem Text="{Binding VisualState.ActiveUser.DisplayRanking}"/>
+        <ToolbarItem Icon="{StaticResource DefaultProfileImage}" IsEnabled="False"/>
+        <ToolbarItem Text="{Binding VisualState.ActiveUser.Username}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <ViewModels:AskForHelpViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Row="0" Style="{StaticResource TitleLabel}" Text="ASK FOR HELP" TextColor="MediumPurple"/>
+
+            <Label Grid.Row="1" Style="{StaticResource DescriptionLabelStyle}" Text="Category:" TextColor="MediumPurple"/>
+            <Picker Grid.Row="2" ItemsSource="{Binding VisualState.CategoriesList}" ItemDisplayBinding="{Binding CategoryName}" SelectedIndex="{Binding VisualState.SelectedIndex, Mode=TwoWay}" HorizontalOptions="Center"/>
+
+            <Label Grid.Row="3" Style="{StaticResource DescriptionLabelStyle}" Text="Comment:" TextColor="MediumPurple"/>
+            <Editor Grid.Row="4" BackgroundColor="LavenderBlush" Placeholder="Add a comment..." VerticalOptions="FillAndExpand" TextColor="MediumPurple" Margin="64"/>
+
+            <StackLayout Grid.Row="5" Orientation="Horizontal">
+                <Button Style="{StaticResource FooterDoubleButtonStyle}" Command="{Binding BackCommand}" Text="CANCEL"/>
+                <Button Style="{StaticResource FooterDoubleButtonStyle}" Command="{Binding OpenVolunteersView}" Text="CONFIRM"/>
+            </StackLayout>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
