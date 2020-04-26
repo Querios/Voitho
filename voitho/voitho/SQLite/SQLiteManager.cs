@@ -13,7 +13,6 @@ namespace voitho.SQLite
         SQLiteConnection db = new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "voitho.db3"));
         public SQLiteManager()
         {
-            db.DropTable<User>();
             db.CreateTable<User>();
 
             db.CreateTable<Request>();
